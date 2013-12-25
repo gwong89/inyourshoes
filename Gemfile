@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+
+gem 'jquery-rails'
+
+gem 'bootstrap-sass'
+
+gem 'sprockets'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'

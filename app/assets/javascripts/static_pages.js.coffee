@@ -5,6 +5,4 @@
 $(document).ready ->
   
   #Handles menu drop down`enter code here`
-  $(".dropdown-menu").find("form").click (e) ->
-    e.stopPropagation()
-
+  $(".dropdown-toggle").dropdown()

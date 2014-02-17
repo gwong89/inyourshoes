@@ -48,6 +48,24 @@ textarea {
 }
 
 
+
+
+/*image padding in main page*/
+.row {
+  text-align: justify;
+}
+
+.row img{
+  display: inline-block;
+  vertical-align: center;
+}
+
+.row .fix{
+  width: 100%;
+  height: 0;
+  display: inline-block;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

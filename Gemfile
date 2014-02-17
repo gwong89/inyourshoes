@@ -7,8 +7,6 @@ gem 'rails', '4.0.2'
 
 gem  'bcrypt-ruby'
 
-gem 'jquery-rails'
-
 gem 'bootstrap-sass'
 
 gem 'sprockets'

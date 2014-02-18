@@ -7,6 +7,7 @@ gem 'rails', '4.0.2'
 
 gem 'font-awesome-sass'
 
+gem 'mail'
 
 gem  'bcrypt-ruby'
 

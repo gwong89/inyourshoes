@@ -1,6 +1,5 @@
 @import "bootstrap";
 
-
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -18,6 +17,13 @@
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+
+
+
+.center form-group{overflow:hidden; clear:left;padding: 5px;}
+
 
 
 /* universal */

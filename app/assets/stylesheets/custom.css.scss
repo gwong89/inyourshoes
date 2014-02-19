@@ -21,12 +21,25 @@
 
 
 
-
+/*contact form*/
 .center form-group{overflow:hidden; clear:left;padding: 5px;}
 
 
 
 /* universal */
+
+
+
+
+// Inverse navbar
+
+.navbar-inverse .container {
+background-color: Lavender;
+}
+
+.navbar-inner{
+background-color: Lavender;
+}
 
 html {
   overflow-y: scroll;
@@ -34,7 +47,7 @@ html {
 
 body {
   padding-top: 60px;
-  
+  background-color: LightGray;
 }
 
 section {
@@ -53,8 +66,9 @@ textarea {
   margin-bottom: 10px;
 }
 
-
-
+.jumbotron {
+  background-color: Bisque;
+}
 
 /*image padding in main page*/
 .row {
@@ -105,7 +119,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: Coral;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 20px;

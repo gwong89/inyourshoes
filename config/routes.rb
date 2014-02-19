@@ -2,6 +2,10 @@ Inyourshoes::Application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy] 
+  
+  match '/additionalinfo',to: 'users#additional_info', via: 'get'
+
+
 
   root 'static_pages#home'
   match '/signout',to: 'sessions#destroy',  via: 'delete'

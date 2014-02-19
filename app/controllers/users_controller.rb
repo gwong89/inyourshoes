@@ -8,14 +8,20 @@ class UsersController < ApplicationController
     @user = User.new 
   end
 
+  
+  def additional_info
+    @user = User.new
+  end
+
 
   def create
      @user = User.new(user_params)
      if @user.save
-      UserMailer.welcome_email(@user).deliver
-      sign_in @user 
+     # UserMailer.welcome_email(@user).deliver
+      sign_in @user
+      redirect_to users: 'additional_info' 
       flash[:success] = "Welcome to InYourShoes!"
-      redirect_to @user  
+      return @user  
      else
        render'new'
      end

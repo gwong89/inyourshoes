@@ -19,6 +19,18 @@ Inyourshoes::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+
+  #Action emailer config for gmail
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'inyourshoes.herokuapp.com',
+  user_name:            'inyourshoeschat@gmail.com',
+  password:             'cowultra16',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = true
 

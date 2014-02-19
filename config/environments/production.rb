@@ -24,7 +24,7 @@ Inyourshoes::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
-  port:                 587,
+  port:                 465,
   domain:               'inyourshoes.herokuapp.com',
   user_name:            'inyourshoeschat@gmail.com',
   password:             'cowultra16',

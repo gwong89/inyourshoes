@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
      @user = User.new(user_params)
      if @user.save
-     # UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_email(@user).deliver
       sign_in @user
       redirect_to users: 'additional_info' 
       flash[:success] = "Welcome to InYourShoes!"

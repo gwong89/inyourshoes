@@ -10,7 +10,10 @@ class UsersController < ApplicationController
 
   
   def additional_info
-    @user = User.new
+    @user = User.new(user_addinfo)
+    if @user.save
+     redirect_to @user
+    end
   end
 
 
@@ -19,9 +22,9 @@ class UsersController < ApplicationController
      if @user.save
       UserMailer.welcome_email(@user).deliver
       sign_in @user
-      redirect_to users: 'additional_info' 
+      redirect_to  additional_info_path
       flash[:success] = "Welcome to InYourShoes!"
-      return @user  
+      #return @user  
      else
        render'new'
      end
@@ -31,5 +34,10 @@ class UsersController < ApplicationController
     
     def user_params 
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+
+    def user_addinfo
+      params.permit(:expertise, :years)
     end
 end

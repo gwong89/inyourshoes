@@ -3,17 +3,17 @@ Inyourshoes::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy] 
   
-  match '/additionalinfo',to: 'users#additional_info', via: 'get'
+  get  '/additional_info', to: 'users#additional_info'
 
 
 
   root 'static_pages#home'
-  match '/signout',to: 'sessions#destroy',  via: 'delete'
-  match '/signup', to: 'users#new',         via: 'get' 
-  match '/signin', to: 'sessions#new',      via: 'get'
-  match '/help',   to: 'static_pages#help', via: 'get'
-  match '/about',  to: 'static_pages#about', via: 'get'
-  match '/contact',to: 'static_pages#contact', via: 'get'
+  get '/signout',to: 'sessions#destroy',  via: 'delete'
+  get '/signup', to: 'users#new',         via: 'get' 
+  get '/signin', to: 'sessions#new',      via: 'get'
+  get '/help',   to: 'static_pages#help', via: 'get'
+  get '/about',  to: 'static_pages#about', via: 'get'
+  get '/contact',to: 'static_pages#contact', via: 'get'
   
 # See how all your routes lay out with "rake routes".
 

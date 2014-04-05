@@ -10,9 +10,16 @@ class UsersController < ApplicationController
 
   
   def additional_info
-    @user = User.new(user_addinfo)
-    if @user.save
-     redirect_to @user
+    @user = User.find params[:id]
+  end
+
+
+  def update
+    @user =  User.find(params[:id])
+    if @user.update(user_addinfo)
+         redirect_to @user
+    else
+	 render action: 'additional_info'
     end
   end
 
@@ -20,11 +27,11 @@ class UsersController < ApplicationController
   def create
      @user = User.new(user_params)
      if @user.save
-      UserMailer.welcome_email(@user).deliver
+     # session[:user_id] = @user.id
+     # UserMailer.welcome_email(@user).deliver
       sign_in @user
-      redirect_to  additional_info_path
+      redirect_to  additional_info_path(@user)
       flash[:success] = "Welcome to InYourShoes!"
-      #return @user  
      else
        render'new'
      end
@@ -38,6 +45,6 @@ class UsersController < ApplicationController
 
 
     def user_addinfo
-      params.permit(:expertise, :years)
+      params.require(:user).permit(:years_business, :years_relationships, :years_careers, :years_lifeoutlook)
     end
 end

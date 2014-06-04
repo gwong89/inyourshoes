@@ -7,8 +7,15 @@
 
 
 jQuery ($) ->
-  $(".input-group-btn .dropdown-menu > li:not(.divider)").click ->
+  $('.input-group-btn .dropdown-menu > li:not(.divider)').click ->
     $(this).closest("ul").prev().text ($(this).text())
     return
-
   return
+
+
+
+
+$(document).ready ->
+
+  #Handles menu drop down`enter code here`
+  $(".dropdown-toggle").dropdown()

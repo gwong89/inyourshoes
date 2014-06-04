@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
-  
+
   def show
     @user = User.find(params[:id])
   end
-  
+
   def new
-    @user = User.new 
+    @user = User.new
   end
 
-  
+
   def additional_info
     @user = User.find params[:id]
   end
@@ -28,18 +28,18 @@ class UsersController < ApplicationController
      @user = User.new(user_params)
      if @user.save
       session[:user_id] = @user.id
-      UserMailer.welcome_email(@user).deliver
+      #UserMailer.welcome_email(@user).deliver
       sign_in @user
       redirect_to  additional_info_path(@user)
       flash[:success] = "Welcome to InYourShoes!"
      else
        render'new'
      end
-  end  
+  end
 
   private
-    
-    def user_params 
+
+    def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 

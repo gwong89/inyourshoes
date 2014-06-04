@@ -2,13 +2,17 @@
 <html>
   <head>
     <title>InYourShoes:You're not alone | <%= yield(:title) %></title>
+    <script type='text/javascript' src='/js/lib/dummy.js'></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> 
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.js"></script>
+    <script type='text/javascript' src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <%= stylesheet_link_tag "application", media: "all",
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %> 
+    <%= render 'layouts/shim' %>
  </head>
   <body>
     <%= render 'layouts/header' %>
